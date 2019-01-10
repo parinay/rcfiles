@@ -1,0 +1,38 @@
+[user]
+	name = Parinay Kondekar
+[push]
+    default = simple
+# Add the following to your .gitconfig file.
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[alias]
+    pr = pull --rebase
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    l = log --graph --oneline --decorate --all
+    st   = status
+    lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+    lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    a = add 
+    cp = cherry-pick
+    cl = clone
+    ci = commit
+    co = checkout
+    br = branch
+    diff = diff --word-diff
+    dc = diff --cached
+    sl = stash list
+    sa = stash apply
+    ss = stash save
+# https://gist.github.com/scottnonnenberg/fefa3f65fdb3715d25882f3023b31c29
+
+    glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  # No need for a GUI - a nice, colorful, graphical representation
+  # https://git-scm.com/docs/git-log
+  # via https://medium.com/@payload.dd/thanks-for-the-git-st-i-will-use-this-4da5839a21a4
+
+[core]
+	editor = vim
