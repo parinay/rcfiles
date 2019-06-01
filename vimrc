@@ -70,6 +70,8 @@ Plug 'honza/vim-snippets'
 "" Color
 Plug 'tomasr/molokai'
 
+"" Ripgrep Fast recrusive Search
+Plug 'jremmen/vim-ripgrep'
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
