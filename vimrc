@@ -72,6 +72,12 @@ Plug 'tomasr/molokai'
 
 "" Ripgrep Fast recrusive Search
 Plug 'jremmen/vim-ripgrep'
+
+"" File Navigation
+Plug 'ctrlpvim/ctrlp.vim'
+if executable('rg')
+    let g:ctrlp_user_command = 'rg %s --files --hidden -color=never --glob ""'
+endif
 "*****************************************************************************
 "" Custom bundles
 "*****************************************************************************
