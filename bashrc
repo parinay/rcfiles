@@ -158,12 +158,12 @@ alias tf='tail -f '
 alias wcl='wc -l'
 
 alias c="clear"
-#prompt                                                                         
-export CSCOPE_EDITOR=vim    
+#prompt
+export CSCOPE_EDITOR=vim
 export PS1='[\u@\h \w]:-'
 
-#history                                                                        
-export HISTFILESIZE=    
+#history
+export HISTFILESIZE=
 export HISTSIZE=
 
 #man
@@ -182,3 +182,6 @@ export TMOUT=
 
 #download playlist
 alias youtubedl-pl="youtube-dl -i -f mp4"
+
+#kubectl command comletion
+source <(kubectl completion bash)
