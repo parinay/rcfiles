@@ -160,7 +160,21 @@ alias wcl='wc -l'
 alias c="clear"
 #prompt
 export CSCOPE_EDITOR=vim
-export PS1='[\u@\h \w]:-'
+parse_kube_context() {
+if [ -z ${KUBECONFIG+x} ]; then
+echo none
+else
+kubectl config current-context | cut -d "." -f 1
+fi
+}
+
+prompt_command() {
+export PS1="\u@\h:$(parse_kube_context):\W>"
+}
+
+PROMPT_COMMAND=prompt_command
+
+#export PS1='[\u@\h \w]:-'
 
 #history
 export HISTFILESIZE=
