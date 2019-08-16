@@ -10,16 +10,10 @@
 [difftool "meld"]
     cmd = meld "$LOCAL" "$REMOTE"
 [alias]
-    pr = pull --rebase
-    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
-    l = log --graph --oneline --decorate --all
+    history = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    l = log --oneline
     st   = status
-    lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
     lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
-    a = add
-    cp = cherry-pick
-    cl = clone
-    ci = commit
     co = checkout
     br = branch
     diff = diff --word-diff
@@ -29,10 +23,25 @@
     ss = stash save
 # https://gist.github.com/scottnonnenberg/fefa3f65fdb3715d25882f3023b31c29
 
-    glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    graph = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
   # No need for a GUI - a nice, colorful, graphical representation
   # https://git-scm.com/docs/git-log
   # via https://medium.com/@payload.dd/thanks-for-the-git-st-i-will-use-this-4da5839a21a4
+
+    # git log --follow -p <path>
+    # List all changes to a specific file, even if it has been renamed.
+    follow = "!f() { \
+                git log --follow -p $1; \
+    ┆   ┆   }; f"
+    #new commits created by last command after git pull
+    new = !sh -c 'git log $1@{1}..$1@{0} "$@"'
+    #show last time each local branch changed
+    last = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - (%(color:green)%(committerdate:relative)%(color:reset))'
+
+    #git remote add
+    ra = ra = "!f() { \
+        git remote add $1 https://bitbucket.org/$2.git; \
+      }; f"
 
 [core]
 	editor = vim
