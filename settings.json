@@ -1,0 +1,51 @@
+{
+    // go
+    "go.testOnSave": true,
+    "go.lintOnSave": "package",
+    "go.vetOnSave": "workspace",
+    "go.lintTool": "golint",
+    "go.formatTool": "goimports",
+    "go.testFlags": [
+        "-v"
+    ],
+    "go.autocompleteUnimportedPackages": true,
+    "[go]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+    },
+
+    // python
+    "python.formatting.provider": "black",
+    "editor.formatOnSave": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--enable=F,E,W",
+        "--max-line-length",
+        "100",
+        "--rcfile",
+        "/home/zorbish/.pylintrc"
+    ],
+    "editor.wordWrapColumn": 100,
+    "[python]": {
+        "editor.tabSize": 4,
+    },
+    "python.formatting.blackArgs": [
+        "--line-length",
+        "120"
+    ],
+    "[markdown]": {
+        "editor.quickSuggestions": true
+    },
+    // editor
+    // "editor.fontFamily": "Fira Code",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "editor.formatOnPaste": false,
+    "window.zoomLevel": 0,
+    "terminal.integrated.shell.linux": "/usr/bin/zsh",
+    "terminal.integrated.fontFamily": "Meslo LG S for Powerline",
+    "python.dataScience.sendSelectionToInteractiveWindow": true,
+}
